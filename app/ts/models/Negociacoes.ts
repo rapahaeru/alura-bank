@@ -5,7 +5,8 @@ class Negociacoes {
     this._negociacoes.push(negociacao);
   }
 
-  paraArray() {
-    return this._negociacoes;
+  paraArray(): Negociacao[] {
+    // programacao defensiva
+    return [].concat(this._negociacoes);
   }
 }
