@@ -1,12 +1,13 @@
+declare var $: any;
 abstract class View<T> {
-  protected _elemento: Element;
+  protected _elemento: any;
 
   constructor(seletor: string) {
-    this._elemento = document.querySelector(seletor);
+    this._elemento = $(seletor);
   }
 
   update(mensagem: T): void {
-    this._elemento.innerHTML = this.template(mensagem);
+    this._elemento.html(this.template(mensagem));
   }
 
   abstract template(model: T): string;
