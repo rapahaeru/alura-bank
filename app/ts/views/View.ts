@@ -1,4 +1,4 @@
-class View<T> {
+abstract class View<T> {
   protected _elemento: Element;
 
   constructor(seletor: string) {
@@ -9,7 +9,5 @@ class View<T> {
     this._elemento.innerHTML = this.template(mensagem);
   }
 
-  template(model: T): string {
-    throw new Error("Faltou implementar o método componente");
-  }
+  abstract template(model: T): string;
 }
